@@ -78,7 +78,7 @@ http.createServer(function(req, res) {
                     }
                     let current_nbr_file = 0; //variable pour compter les fichiers deja traites
                     const counter = setInterval(() => {
-                        fs.readdir('./redacted_files', function(err, files) {
+                        fs.readdir(redacted_files_directory, function(err, files) {
                             if (files.length != current_nbr_file) {
                                 console.log(files.length + (!(files.length > 1) ? ' fichier traité' : ' fichiers traités'));
                                 progress(files.length); //Ecrire le nombre de fichier traités dans progress.txt
